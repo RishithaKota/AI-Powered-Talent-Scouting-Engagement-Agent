@@ -1,0 +1,26 @@
+{
+  "name": "ai-recruiter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack AI Recruiter app with React, Express, MongoDB, and Clerk.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace server",
+    "lint": "npm run lint --workspace client && npm run lint --workspace server"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "@clerk/react": "^6.4.5",
+    "@google/generative-ai": "^0.24.1",
+    "framer-motion": "^10.18.0",
+    "mongodb": "^7.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}
