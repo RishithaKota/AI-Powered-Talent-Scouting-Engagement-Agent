@@ -11,6 +11,10 @@ A simple production-ready full-stack recruiter assistant:
 - Authentication: Clerk
 - AI: OpenRouter / OpenAI (with fallback)
 
+  ## Architecture
+
+![Architecture](architecture.png)
+
 ## ⚙️ How It Works
 
 1. Recruiter inputs a job description
