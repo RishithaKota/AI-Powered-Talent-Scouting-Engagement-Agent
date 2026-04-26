@@ -124,6 +124,21 @@ All recruiter APIs are protected by Clerk auth. Send `Authorization: Bearer <Cle
 - `GET /api/shortlist/:jobId` - fetch final ranked shortlist for a job
 - `POST /api/chat` - simulate recruiter-candidate chat and update interest score
 
+### Scoring Logic
+
+The system evaluates candidates using a combination of skill matching and interest analysis:
+
+Match Score (70%)
+Calculated by comparing candidate skills with job requirements using weighted keyword matching.
+Interest Score (30%)
+Derived from chat responses, reflecting the candidate’s enthusiasm and alignment with the role.
+
+Final Score
+
+Final Score = (0.7 × Match Score) + (0.3 × Interest Score)
+
+This approach ensures candidates are ranked based on both technical fit and genuine interest, providing a more holistic evaluation.
+
 ## 🧪 Sample Input
 
 ### Job Description
@@ -141,6 +156,7 @@ Bonus:
 Node.js experience
 Experience with hiring platforms
 
+
   ### Example Chat Response
 
 ```json
@@ -156,7 +172,7 @@ Experience with hiring platforms
   }
 }
 
-## Production Notes
+### Production Notes
 
 - Use Clerk JWTs between frontend and backend.
 - Set `CLIENT_ORIGIN` to the deployed frontend URL.
